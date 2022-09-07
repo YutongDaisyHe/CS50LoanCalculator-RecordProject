@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Lend
+{% endblock %}
+
+{% block main %}
+    <form action="/lend" method="post" class="row gy-2 gx-3 align-items-center">
+    <div class="row row-cols-1 ">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <img src="/static/home.jpg" class="rounded mx-auto d-block" alt="home" width="400" height="350">
+            <p class="card-text"></p>
+            <a class="btn btn-primary" href="/home_loan">Home Loan</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <img src="/static/car.jpg" class="rounded mx-auto d-block" alt="car" width="400" height="350">
+            <p class="card-text"></p>
+            <a class="btn btn-primary" href="/auto_loan">Auto Loan</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </form>
+{% endblock %}

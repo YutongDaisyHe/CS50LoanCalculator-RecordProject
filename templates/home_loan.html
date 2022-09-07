@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home_Loan
+{% endblock %}
+
+{% block main %}
+    <h3>Home Loan</h3>
+    <form action="/home_loan" method="post" class="row gy-2 gx-3 align-items-center">
+        <div class="col-auto">
+            <label class="form-label">Home Value</label>
+            <label class="form-label">$</label>
+            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="home_value">
+        </div>
+        <div class="col-auto">
+            <label class="form-label">Down Payment</label>
+            <label class="form-label">$</label>
+            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)"  name="down_payment">
+        </div>
+
+        <div class="col-auto">
+            <label class="form-label">Annual Interest Rate</label>
+            <input type="text" class="form-control" name="interest_rate">
+            <label class="form-label">%</label>
+        </div>
+        <div class="col-auto">
+            <label class="form-label" for="inputGroupSelect02">Loan Term</label>
+            <select class="form-select" id="inputGroupSelect02" name="term">
+                <option disabled selected value="">Choose...</option>
+                <option value="15">Fifteen-year</option>
+                <option value="30">Thirty-year fixed</option>
+            </select>
+        </div>
+        <div class="col-auto">
+            <label class="form-label" for="inputGroupSelect02">Start Date</label>
+            <select class="form-select" id="inputGroupSelect02" name="month">
+                <option disabled selected value="">Month</option>
+                {% for month in months %}
+                    <option value="{{ month }}">{{ month }}</option>
+                {% endfor %}
+            </select>
+            <input type="integer" class="form-control" placeholder="Year" name ="year">
+        </div>
+
+        <div class="col-auto">
+            <label class="form-label">Property Tax</label>
+            <label class="form-label">$</label>
+            <input type="float" class="form-control"  name="tax">
+            <label class="form-label">/year</label>
+        </div>
+        <div class="col-auto">
+            <label class="form-label">Home Insurance</label>
+            <label class="form-label">$</label>
+            <input type="float" class="form-control" name="insurance">
+            <label class="form-label">/year</label>
+        </div>
+        <div class="col-auto">
+            <label class="form-label">Monthly HOA</label>
+            <label class="form-label">$</label>
+            <input type="float" class="form-control" name="hoa">
+        </div>
+
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+{% endblock %}

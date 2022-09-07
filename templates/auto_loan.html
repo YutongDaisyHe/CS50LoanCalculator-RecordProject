@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Auto_Loan
+{% endblock %}
+
+{% block main %}
+    <h3>Auto Loan</h3>
+    <form action="/auto_loan" method="post" class="row gy-2 gx-3 align-items-center">
+        <div class="col-auto">
+            <label class="form-label">Car Price</label>
+            <label class="form-label">$</label>
+            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="car_price">
+        </div>
+        <div class="col-auto">
+            <label class="form-label">Down Payment</label>
+            <label class="form-label">$</label>
+            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)"  name="down_payment">
+        </div>
+
+        <div class="col-auto">
+            <label class="form-label">Annual Interest Rate</label>
+            <input type="text" class="form-control" name="interest_rate">
+            <label class="form-label">%</label>
+        </div>
+        <div class="col-auto">
+            <label class="form-label" for="inputGroupSelect02">Loan Term</label>
+            <select class="form-select" id="inputGroupSelect02" name="term">
+                <option disabled selected value="">Choose...</option>
+                <option value="12">12-month</option>
+                <option value="24">24-month</option>
+                <option value="36">36-month</option>
+                <option value="48">48-month</option>
+                <option value="60">60-month</option>
+                <option value="72">72-month</option>
+                <option value="80">80-month</option>
+            </select>
+        </div>
+        <div class="col-auto">
+            <label class="form-label" for="inputGroupSelect02">Start Date</label>
+            <select class="form-select" id="inputGroupSelect02" name="month">
+                <option disabled selected value="">Month</option>
+                {% for month in months %}
+                    <option value="{{ month }}">{{ month }}</option>
+                {% endfor %}
+            </select>
+            <input type="integer" class="form-control" placeholder="Year" name ="year">
+        </div>
+
+        <div class="col-auto">
+            <label class="form-label">Sales Tax</label>
+            <input type="float" class="form-control"  name="tax">
+            <label class="form-label">%</label>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+{% endblock %}

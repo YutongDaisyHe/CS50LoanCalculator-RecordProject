@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <h3>Home Loan</h3>
+    <table class="table table-bordered border-primary">
+        <tbody>
+            <div class="container">
+            {% for home_loan in home_loans %}
+                <tr>
+                    <th scope="row"><div class="col">Home Value</div></th>
+                    <td><div class="col">{{ home_loan.home_value | usd }}</div></td>
+                    <th scope="row"><div class="col">Down payment amount</div></th>
+                    <td><div class="col">{{ home_loan.down_payment | usd }}</div></td>
+                </tr>
+                <tr>
+                    <th><div class="col">Loan Amount</div></th>
+                    <td><div class="col">{{ home_loan.loan_amount | usd }}</div></td>
+                    <th><div class="col">Interest Rate</div></td>
+                    <td><div class="col">{{ home_loan.interest_rate }}%</div></td>
+                </tr>
+                <tr>
+                    <th><div class="col">Loan Term</div></th>
+                    <td><div class="col">{{ home_loan.loan_term }} years</div></td>
+                    <th><div class="col">Loan start date</div></th>
+                    <td><div class="col">{{ home_loan.start_date }}</div></td>
+                </tr>
+                <tr>
+                    <th><div class="col">Monthly Tax</div></th>
+                    <td><div class="col">{{ home_loan.monthly_tax | usd }}</div></td>
+                    <th><div class="col">Monthly Home Insurance</div></th>
+                    <td><div class="col">{{ home_loan.monthly_insurance | usd }}</div></td>
+                </tr>
+                <tr>
+                    <th><div class="col">Monthly HOA</div></th>
+                    <td><div class="col">{{ home_loan.monthly_HOA | usd }}</div></td>
+                    <th><div class="col">Monthly Payment</div></th>
+                    <td><div class="col">{{ home_loan.monthly_payment | usd }}</div></td>
+                </tr>
+                </div>
+            {% endfor %}
+            </div>
+        </tbody>
+    </table>
+
+    <h3>Auto Loan</h3>
+    <table class="table table-bordered border-primary">
+        <tbody>
+            <div class="container">
+            {% for auto_loan in auto_loans %}
+                <tr>
+                    <th scope="row"><div class="col">Car Price</div></th>
+                    <td><div class="col">{{ auto_loan.car_price | usd }}</div></td>
+                    <th scope="row"><div class="col">Down payment amount</div></th>
+                    <td><div class="col">{{ auto_loan.down_payment | usd }}</div></td>
+                </tr>
+                <tr>
+                    <th><div class="col">Loan Amount</div></th>
+                    <td><div class="col">{{ auto_loan.loan_amount | usd }}</div></td>
+                    <th><div class="col">Interest Rate</div></td>
+                    <td><div class="col">{{ auto_loan.interest_rate }}%</div></td>
+                </tr>
+                <tr>
+                    <th><div class="col">Loan Term</div></th>
+                    <td><div class="col">{{ auto_loan.loan_term }} years</div></td>
+                    <th><div class="col">Loan start date</div></th>
+                    <td><div class="col">{{ auto_loan.start_date }}</div></td>
+                </tr>
+                <tr>
+                    <th><div class="col">Sales Tax</div></th>
+                    <td><div class="col">{{ auto_loan.sales_tax | usd }}</div></td>
+                    <th><div class="col">Monthly Payment</div></th>
+                    <td><div class="col">{{ auto_loan.monthly_payment | usd }}</div></td>
+                </tr>
+                </div>
+            {% endfor %}
+            </div>
+        </tbody>
+    </table>
+{% endblock %}

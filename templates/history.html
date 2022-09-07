@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+    <h3>Mortgage Payment History</h3>
+    <br><br>
+    <!--carousel from Bootstrap-->
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-ride="carousel">
+        <!--<ol class="carousel-indicators">-->
+        <!--    <li data-bs-target="#carouselExampleDark" data-slide-to="0" class="active"></li>-->
+        <!--    <li data-bs-target="#carouselExampleDark" data-slide-to="1"></li>-->
+        <!--    <li data-bs-target="#carouselExampleDark" data-slide-to="2"></li>-->
+        <!--</ol>-->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <h5>Remaining Balance</h5>
+                <p>*click at left/right side to see more charts</p>
+                <image src="/static/balance_per_year.png", alt = "balance_per_year", width="500" height="400">
+            </div>
+            <div class="carousel-item">
+                <h5>Interest Paid</h5>
+                <p>*click at left/right side to see more charts</p>
+                <image src="/static/interest_paid.png", alt = "interest_paid", width="500" height="400">
+            </div>
+            <div class="carousel-item">
+                <h5>Principal Paid</h5>
+                <p>*click at left/right side to see more charts</p>
+                <image src="/static/principal_paid.png", alt = "principal_paid", width="500" height="400">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleDark" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleDark" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <br><br>
+
+    <div>
+        <h4>Amortization schedule</h4>
+        <div class="centered">{{ data | safe}}</div>
+    </div>
+
+
+
+    <!--<div>-->
+    <!--    <div>-->
+    <!--        <image src="/static/balance_per_year.png", alt = "balance_per_year", width="500" height="400">-->
+    <!--        <label><h5>Remaining Balance</h5></label>-->
+    <!--    </div>-->
+    <!--    <div>-->
+    <!--        <image src="/static/interest_paid.png", alt = "interest_paid", width="500" height="400">-->
+    <!--        <label><h5>Interest Paid</h5></label>-->
+    <!--    </div>-->
+    <!--    <div>-->
+    <!--        <image src="/static/principal_paid.png", alt = "principal_paid", width="500" height="400">-->
+    <!--        <label><h5>Principal Paid</h5></label>-->
+    <!--    </div>-->
+    <!--</div>-->
+
+{% endblock %}
